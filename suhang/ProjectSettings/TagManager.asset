@@ -9,6 +9,8 @@ TagManager:
   - door
   - appear
   - Scm
+  - labor
+  - move
   layers:
   - Default
   - TransparentFX

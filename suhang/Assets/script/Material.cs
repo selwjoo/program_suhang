@@ -12,10 +12,13 @@ public class Material : MonoBehaviour
         
     }
 
+    
+
     public void OnTriggerStay2D(Collider2D collision)
     {
         if (Input.GetKeyDown(KeyCode.F))
         {
+
             Instantiate(Object);
         }
     }

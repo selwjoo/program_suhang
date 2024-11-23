@@ -16,15 +16,15 @@ public class Revival : Player
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
-            if(Scn == 0)
+            if(GameManager.Scn == 0)
             {
                 SceneManager.LoadScene("Tutorial");
             }
-            else if(Scn == 1)
+            else if(GameManager.Scn == 1)
             {
                 SceneManager.LoadScene("1");
             }
-            else if (Scn == 2)
+            else if (GameManager.Scn == 2)
             {
                 SceneManager.LoadScene("2");
             }

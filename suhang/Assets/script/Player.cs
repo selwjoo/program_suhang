@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Net;
+using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -14,7 +15,8 @@ public class Player : MonoBehaviour
     protected bool isG1 = false;
     private int count = 0;
     public int limit = 3;
-    protected int Scn = 0;
+
+    public SpriteRenderer ren;
 
     public GameObject player;
 
@@ -23,6 +25,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        ren = GetComponent<SpriteRenderer>();
     }
 
     // Update is called once per frame
@@ -35,9 +38,11 @@ public class Player : MonoBehaviour
 
     void move()
     {
-
-        float x = Input.GetAxis("Horizontal");
-        rb.velocity = new Vector2(x * speed, rb.velocity.y);
+ 
+       
+            float x = Input.GetAxis("Horizontal");
+            rb.velocity = new Vector2(x * speed, rb.velocity.y);
+        
        
     }
 
@@ -49,6 +54,7 @@ public class Player : MonoBehaviour
             count += 1;
             if(count <=limit)
             {
+
                 StartCoroutine(G1());
             }
             
@@ -83,7 +89,9 @@ public class Player : MonoBehaviour
 
     public IEnumerator G1()
     {
-        isG1 = !isG1; // ¿ìÅ¬¸¯ ´­·¶À»¶§ ¹Ù·Î Áß·ÂÀÌ ¹Ù·Î ¿ø·¡´ë·Î µÇ´Â°Å ¸·À¸·Á°í
+        isG1 = !isG1; // ï¿½ï¿½Å¬ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù·ï¿½ ï¿½ß·ï¿½ï¿½ï¿½ ï¿½Ù·ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ç´Â°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ì´ê±° ì™œì´ëŸ¼?
+
+        ren.flipY = isG1;
 
         rb.gravityScale *= -1;
 
@@ -108,18 +116,20 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("door"))
         {
 
-            if (Scn == 0)
+            if (GameManager.Scn == 0)
             {
                 SceneManager.LoadScene("1");
             }
-            else if(Scn == 1)
+            else if(GameManager.Scn == 1)
             {
                 SceneManager.LoadScene("2");
             }
-            else if(Scn == 2)
+            else if(GameManager.Scn == 2)
             {
                 SceneManager.LoadScene("3");
             }
+            GameManager.Scn += 1;
+
         }
 
     }
