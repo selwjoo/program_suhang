@@ -128,6 +128,14 @@ public class Player : MonoBehaviour
             {
                 SceneManager.LoadScene("3");
             }
+            else if (GameManager.Scn == 2)
+            {
+                SceneManager.LoadScene("4");
+            }
+            else if (GameManager.Scn == 3)
+            {
+                SceneManager.LoadScene("4");
+            }
             GameManager.Scn += 1;
 
         }

@@ -5759,7 +5759,7 @@ GameObject:
   - component: {fileID: 643072036}
   m_Layer: 0
   m_Name: duuuck
-  m_TagString: Untagged
+  m_TagString: player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6324,7 +6324,7 @@ GameObject:
   - component: {fileID: 1060907548}
   - component: {fileID: 1060907547}
   - component: {fileID: 1060907546}
-  - component: {fileID: 1060907545}
+  - component: {fileID: 1060907549}
   m_Layer: 0
   m_Name: button
   m_TagString: Untagged
@@ -6332,19 +6332,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1060907545
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1060907544}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e7ba919b8ea1a84c823a49f5a618e67, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Object: {fileID: 7911526929205152833, guid: 629633bee291f3a428e4e771e667c682, type: 3}
 --- !u!61 &1060907546
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6377,7 +6364,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.54341245, y: -0.34441996}
+  m_Offset: {x: 0.7186606, y: -0.97931504}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -6388,7 +6375,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.59555, y: 1.6888399}
+  m_Size: {x: 2.9460444, y: 2.95863}
   m_EdgeRadius: 0
 --- !u!212 &1060907547
 SpriteRenderer:
@@ -6457,6 +6444,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1060907549
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1060907544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b42b32d647e44d84d9fbf53fbe73a670, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Object: {fileID: 7911526929205152833, guid: 629633bee291f3a428e4e771e667c682, type: 3}
 --- !u!1 &1068351896
 GameObject:
   m_ObjectHideFlags: 0

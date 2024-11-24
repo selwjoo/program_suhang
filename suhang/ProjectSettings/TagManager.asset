@@ -11,6 +11,8 @@ TagManager:
   - Scm
   - labor
   - move
+  - crash
+  - player
   layers:
   - Default
   - TransparentFX

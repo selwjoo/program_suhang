@@ -28,8 +28,19 @@ public class Revival : Player
             {
                 SceneManager.LoadScene("2");
             }
-          
-           
+            else if (GameManager.Scn == 3)
+            {
+                SceneManager.LoadScene("3");
+            }
+            else if (GameManager.Scn == 4)
+            {
+                SceneManager.LoadScene("4");
+            }
+            else if (GameManager.Scn == 5)
+            {
+                SceneManager.LoadScene("5");
+            }
+
 
         }
     }
