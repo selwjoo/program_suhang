@@ -134,7 +134,11 @@ public class Player : MonoBehaviour
             }
             else if (GameManager.Scn == 3)
             {
-                SceneManager.LoadScene("4");
+                SceneManager.LoadScene("5");
+            }
+            else if (GameManager.Scn == 4)
+            {
+                SceneManager.LoadScene("6");
             }
             GameManager.Scn += 1;
 

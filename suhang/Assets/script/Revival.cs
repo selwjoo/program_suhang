@@ -40,6 +40,10 @@ public class Revival : Player
             {
                 SceneManager.LoadScene("5");
             }
+            else if (GameManager.Scn == 6)
+            {
+                SceneManager.LoadScene("6");
+            }
 
 
         }
