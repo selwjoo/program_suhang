@@ -16,6 +16,9 @@ public class Player : MonoBehaviour
     private int count = 0;
     public int limit = 3;
 
+    public float timer = 0.5f;
+    private bool istime = true;
+
     public SpriteRenderer ren;
 
     public GameObject player;
@@ -33,6 +36,7 @@ public class Player : MonoBehaviour
     {
         move();
         gravity_fly();
+        
 
     }
 
@@ -49,12 +53,11 @@ public class Player : MonoBehaviour
     void gravity_fly()
     {
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && istime)
         {
             count += 1;
             if(count <=limit)
             {
-
                 StartCoroutine(G1());
             }
             
@@ -95,12 +98,17 @@ public class Player : MonoBehaviour
 
         rb.gravityScale *= -1;
 
-        yield return null;
+        istime = false;
 
+        yield return new WaitForSeconds(timer);
+
+        istime = true;
 
     }
 
  
+
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Die"))
@@ -128,21 +136,26 @@ public class Player : MonoBehaviour
             {
                 SceneManager.LoadScene("3");
             }
-            else if (GameManager.Scn == 2)
+            else if (GameManager.Scn == 3)
             {
                 SceneManager.LoadScene("4");
             }
-            else if (GameManager.Scn == 3)
+            else if (GameManager.Scn == 4)
             {
                 SceneManager.LoadScene("5");
             }
-            else if (GameManager.Scn == 4)
+            else if (GameManager.Scn == 5)
             {
                 SceneManager.LoadScene("6");
             }
             GameManager.Scn += 1;
 
         }
+        if (collision.gameObject.CompareTag("door1"))
+        {
+            SceneManager.LoadScene("Ending");
+        }
+
 
     }
 

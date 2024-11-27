@@ -6770,7 +6770,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   isG1: 0
-  limit: 2
+  limit: 4
   ren: {fileID: 0}
   player: {fileID: 643072029}
 --- !u!70 &643072031
