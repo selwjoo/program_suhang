@@ -25,6 +25,7 @@ public class Player : MonoBehaviour
 
 
     // Start is called before the first frame update
+   
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -32,11 +33,24 @@ public class Player : MonoBehaviour
     }
 
     // Update is called once per frame
+
+
     void Update()
     {
         move();
         gravity_fly();
-        
+
+        if (isG1 == true)
+        {
+            Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, 180));
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5);
+        }
+        else
+        {
+            Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5);
+        }
+
 
     }
 
@@ -94,7 +108,8 @@ public class Player : MonoBehaviour
     {
         isG1 = !isG1; // ��Ŭ�� �������� �ٷ� �߷��� �ٷ� ������� �Ǵ°� �������� 이거 왜이럼?
 
-        ren.flipY = isG1;
+        //ren.flipY = isG1;
+
 
         rb.gravityScale *= -1;
 
@@ -126,25 +141,29 @@ public class Player : MonoBehaviour
 
             if (GameManager.Scn == 0)
             {
-                SceneManager.LoadScene("1");
+                SceneManager.LoadScene("Story 1");
             }
             else if(GameManager.Scn == 1)
             {
-                SceneManager.LoadScene("2");
+                SceneManager.LoadScene("1");
             }
             else if(GameManager.Scn == 2)
             {
-                SceneManager.LoadScene("3");
+                SceneManager.LoadScene("2");
             }
             else if (GameManager.Scn == 3)
             {
-                SceneManager.LoadScene("4");
+                SceneManager.LoadScene("3");
             }
             else if (GameManager.Scn == 4)
             {
-                SceneManager.LoadScene("5");
+                SceneManager.LoadScene("4");
             }
             else if (GameManager.Scn == 5)
+            {
+                SceneManager.LoadScene("5");
+            }
+            else if (GameManager.Scn == 6)
             {
                 SceneManager.LoadScene("6");
             }
@@ -154,6 +173,12 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("door1"))
         {
             SceneManager.LoadScene("Ending");
+        }
+
+        if (collision.gameObject.CompareTag("story"))
+        {
+            collision.collider.isTrigger = true;
+            SceneManager.LoadScene("Story 1");
         }
 
 
