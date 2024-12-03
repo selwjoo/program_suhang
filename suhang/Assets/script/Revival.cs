@@ -44,7 +44,7 @@ public class Revival : Player
             {
                 SceneManager.LoadScene("5");
             }
-            else if (GameManager.Scn == 6)
+            else if (GameManager.Scn == 7)
             {
                 SceneManager.LoadScene("6");
             }

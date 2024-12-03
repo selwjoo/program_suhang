@@ -18,18 +18,20 @@ public class Player : MonoBehaviour
 
     public float timer = 0.5f;
     private bool istime = true;
+    public bool isGrounded = true;
 
     public SpriteRenderer ren;
-
     public GameObject player;
+    public Animator animator;
 
 
     // Start is called before the first frame update
-   
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         ren = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -42,7 +44,7 @@ public class Player : MonoBehaviour
 
         if (isG1 == true)
         {
-            Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, 180));
+            Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, -180));
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5);
         }
         else
@@ -56,12 +58,56 @@ public class Player : MonoBehaviour
 
     void move()
     {
+
+        float x = Input.GetAxis("Horizontal");
+        rb.velocity = new Vector2(x * speed, rb.velocity.y);
+
+
+        if (x > 0)
+        {
+            if(isG1 == true)
+            {
+                ren.flipX = true;
+            }
+            else
+            {
+                ren.flipX = false;
+            }
+            
+
+            if(isGrounded == true)
+            {
+                animator.SetBool("isrun", true);
+            }
+            
+        }
+        else if (x < 0)
+        {
+            if (isG1 == true)
+            {
+                ren.flipX = false;
+            }
+            else
+            {
+                ren.flipX = true;
+            }
+
+            if (isGrounded == true)
+            {
+                animator.SetBool("isrun", true);
+            }
+     
+        }
+
+        if (x == 0)
+        {
+            if (isGrounded == true)
+            {
+                animator.SetBool("isrun", false);
+            }
+
  
-       
-            float x = Input.GetAxis("Horizontal");
-            rb.velocity = new Vector2(x * speed, rb.velocity.y);
-        
-       
+        }
     }
 
     void gravity_fly()
@@ -88,6 +134,7 @@ public class Player : MonoBehaviour
             }
             else if (isG1 == true)
             {
+
                 rb.gravityScale = -0.2f;
             }
 
@@ -95,10 +142,12 @@ public class Player : MonoBehaviour
         }
         else if (isG1 == false)
         {
+  
             rb.gravityScale = 2f;
         }
         else if (isG1 == true)
         {
+       
             rb.gravityScale = -2f;
         }
 
@@ -108,8 +157,7 @@ public class Player : MonoBehaviour
     {
         isG1 = !isG1; // ��Ŭ�� �������� �ٷ� �߷��� �ٷ� ������� �Ǵ°� �������� 이거 왜이럼?
 
-        //ren.flipY = isG1;
-
+        ren.flipX = true;
 
         rb.gravityScale *= -1;
 
@@ -181,8 +229,23 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene("Story 1");
         }
 
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+            animator.SetBool("isfall", false);
+        }
 
     }
 
-    
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+            animator.SetBool("isfall", true);
+        }
+    }
+
+
 }

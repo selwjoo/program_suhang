@@ -15,6 +15,7 @@ TagManager:
   - player
   - door1
   - story
+  - Ground
   layers:
   - Default
   - TransparentFX
