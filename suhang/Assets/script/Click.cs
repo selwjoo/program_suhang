@@ -8,7 +8,7 @@ public class Click : MonoBehaviour
 {
     public void Cl()
     {
-        SceneManager.LoadScene("Tutorial");
+        SceneManager.LoadScene("Story");
     }
 
     public void F()

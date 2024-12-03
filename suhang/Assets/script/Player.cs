@@ -18,36 +18,81 @@ public class Player : MonoBehaviour
 
     public float timer = 0.5f;
     private bool istime = true;
+    private bool isGrounded = true;
 
     public SpriteRenderer ren;
-
     public GameObject player;
+    public Animator animator;
 
 
     // Start is called before the first frame update
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
         ren = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
+
+
     void Update()
     {
         move();
         gravity_fly();
-        
+
+        if (isG1 == true)
+        {
+            Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, 180));
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5);
+        }
+        else
+        {
+            Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, 0));
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5);
+        }
+
 
     }
 
     void move()
     {
+
+        float x = Input.GetAxis("Horizontal");
+        rb.velocity = new Vector2(x * speed, rb.velocity.y);
+
+
+        if (x > 0)
+        {
+            ren.flipX = false;
+
+            if(isGrounded == true)
+            {
+                animator.SetBool("isrun", true);
+            }
+            
+        }
+        else if (x < 0)
+        {
+            ren.flipX = true;
+
+            if (isGrounded == true)
+            {
+                animator.SetBool("isrun", true);
+            }
+     
+        }
+
+        if (x == 0)
+        {
+            if (isGrounded == true)
+            {
+                animator.SetBool("isrun", false);
+            }
+
  
-       
-            float x = Input.GetAxis("Horizontal");
-            rb.velocity = new Vector2(x * speed, rb.velocity.y);
-        
-       
+        }
     }
 
     void gravity_fly()
@@ -74,6 +119,7 @@ public class Player : MonoBehaviour
             }
             else if (isG1 == true)
             {
+               
                 rb.gravityScale = -0.2f;
             }
 
@@ -85,6 +131,7 @@ public class Player : MonoBehaviour
         }
         else if (isG1 == true)
         {
+           
             rb.gravityScale = -2f;
         }
 
@@ -94,7 +141,7 @@ public class Player : MonoBehaviour
     {
         isG1 = !isG1; // ��Ŭ�� �������� �ٷ� �߷��� �ٷ� ������� �Ǵ°� �������� 이거 왜이럼?
 
-        ren.flipY = isG1;
+        ren.flipX = true;
 
         rb.gravityScale *= -1;
 
@@ -126,25 +173,29 @@ public class Player : MonoBehaviour
 
             if (GameManager.Scn == 0)
             {
-                SceneManager.LoadScene("1");
+                SceneManager.LoadScene("Story 1");
             }
             else if(GameManager.Scn == 1)
             {
-                SceneManager.LoadScene("2");
+                SceneManager.LoadScene("1");
             }
             else if(GameManager.Scn == 2)
             {
-                SceneManager.LoadScene("3");
+                SceneManager.LoadScene("2");
             }
             else if (GameManager.Scn == 3)
             {
-                SceneManager.LoadScene("4");
+                SceneManager.LoadScene("3");
             }
             else if (GameManager.Scn == 4)
             {
-                SceneManager.LoadScene("5");
+                SceneManager.LoadScene("4");
             }
             else if (GameManager.Scn == 5)
+            {
+                SceneManager.LoadScene("5");
+            }
+            else if (GameManager.Scn == 6)
             {
                 SceneManager.LoadScene("6");
             }
@@ -156,8 +207,29 @@ public class Player : MonoBehaviour
             SceneManager.LoadScene("Ending");
         }
 
+        if (collision.gameObject.CompareTag("story"))
+        {
+            collision.collider.isTrigger = true;
+            SceneManager.LoadScene("Story 1");
+        }
+
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+            animator.SetBool("isfall", false);
+        }
 
     }
 
-    
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+            animator.SetBool("isfall", true);
+        }
+    }
+
+
 }

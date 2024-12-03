@@ -7,11 +7,13 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public static int Scn;
+    public static int Stc;
 
     void Awake()
     {
 
         Scn = 0;
+        Stc = 0;
         // 싱글톤 변수 instance가 비어있는가?
         if (instance == null)
         {
