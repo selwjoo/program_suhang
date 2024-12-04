@@ -362,12 +362,12 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_FontSize: 30
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 80
-    m_Alignment: 3
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -434,17 +434,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogue:
-  - dialogue: "\uC5EC\uAE30 \uC5F0\uAD6C\uC18C \uB9DE\uC9C0,\u3163,,?"
-    pic: {fileID: 82676085, guid: 5c7bc5b6274b1b443baa4e88001fc6f7, type: 3}
-  - dialogue: "\uBB50\uAC00 \uBB38\uC744 \uBD80\uC168\uB098\uBCF8\uB370,,?"
+  - dialogue: "\uAC89\uC73C\uB85C \uBD24\uC744\uB550 \uAD1C\uCC2E\uC544 \uBCF4\uC600\uB294\uB370\n\uB2E4
+      \uAE68\uC84C\uB124"
     pic: {fileID: 82676085, guid: 5c7bc5b6274b1b443baa4e88001fc6f7, type: 3}
   - dialogue: "\uC5F0\uAD6C\uC18C \uC9C1\uC6D0\uB4E4\uC774 \uD0C8\uCD9C\uD558\uB824\uACE0
-      \uBD80\uC248\uB098\uBCF4\uAD70"
-    pic: {fileID: 21300000, guid: e8f3877dfe8d0174a85c337e52ea3af4, type: 3}
-  - dialogue: "\uBB54\uAC00 \uB4E4\uC5B4\uAC00\uAE30 \uC2EB\uC5B4\uC9D0 "
-    pic: {fileID: 82676085, guid: 5c7bc5b6274b1b443baa4e88001fc6f7, type: 3}
-  - dialogue: "\uADF8\uB0E5 \uB4E4\uC5B4\uAC00 \uC784\uB9C8!!!!"
+      \uBD80\uC248\uB098\uBCF4\uAD6C\uB098\n\uC2DC\uAC04\uC774 \uC5C6\uB2E4 \uC5BC\uB978
+      \uB4E4\uC5B4\uAC00\uB834! "
     pic: {fileID: 21300000, guid: d7c4d36cb4428e540afe96e4e9d4b031, type: 3}
+  - dialogue: "\uC73C\uC544 \u314F,,,, \uBB34\uC11C\uC6B4\uB370\n"
+    pic: {fileID: 82676085, guid: 5c7bc5b6274b1b443baa4e88001fc6f7, type: 3}
+  - dialogue: "\uC77C\uB2E8 \uB4E4\uC5B4\uAC00\uBCF4\uC8E0,,,,"
+    pic: {fileID: 82676085, guid: 5c7bc5b6274b1b443baa4e88001fc6f7, type: 3}
   TD: {fileID: 365860195}
   Pics: {fileID: 1829623883}
 --- !u!114 &743153243

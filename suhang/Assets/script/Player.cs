@@ -22,6 +22,7 @@ public class Player : MonoBehaviour
 
     public SpriteRenderer ren;
     public GameObject player;
+    public GameObject duck;
     public Animator animator;
 
 
@@ -177,6 +178,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Die"))
         {
             Destroy(player);
+            Destroy(duck);
             SceneManager.LoadScene("Die");
         }
         if (collision.gameObject.CompareTag("bdbd"))

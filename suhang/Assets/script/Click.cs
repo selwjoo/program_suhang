@@ -15,4 +15,13 @@ public class Click : MonoBehaviour
     {
         SceneManager.LoadScene("Main");
     }
+
+    public void H()
+    {
+        SceneManager.LoadScene("How");
+    }
+
+  
+
+  
 }
