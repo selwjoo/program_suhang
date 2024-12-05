@@ -26,27 +26,27 @@ public class Revival : Player
             }
             else if (GameManager.Scn == 2)
             {
-                SceneManager.LoadScene("1");
+                SceneManager.LoadScene("2");
             }
             else if (GameManager.Scn == 3)
             {
-                SceneManager.LoadScene("2");
+                SceneManager.LoadScene("3");
             }
             else if (GameManager.Scn == 4)
             {
-                SceneManager.LoadScene("3");
+                SceneManager.LoadScene("4");
             }
             else if (GameManager.Scn == 5)
             {
-                SceneManager.LoadScene("4");
+                SceneManager.LoadScene("5");
             }
             else if (GameManager.Scn == 6)
             {
-                SceneManager.LoadScene("5");
+                SceneManager.LoadScene("6");
             }
             else if (GameManager.Scn == 7)
             {
-                SceneManager.LoadScene("6");
+                SceneManager.LoadScene("1");
             }
 
 

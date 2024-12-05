@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class Die : MonoBehaviour
 {
     public GameObject player;
+    public GameObject duck;
     
     void Update()
     {
@@ -17,6 +18,7 @@ public class Die : MonoBehaviour
         if(player.transform.position.y <= -10)
         {
             Destroy(player);
+            Destroy(duck);
             Debug.Log("ав╬З╢ы.");
             SceneManager.LoadScene("Die");
         }

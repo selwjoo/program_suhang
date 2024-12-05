@@ -269,6 +269,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e43fd376c98824b9bcd8ed33e0b809, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 2
+  isG1: 0
+  limit: 3
+  timer: 0.5
+  isGrounded: 1
+  ren: {fileID: 0}
+  player: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!1 &1741430408
 GameObject:
   m_ObjectHideFlags: 0
@@ -463,8 +471,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 97, y: -29}
-  m_SizeDelta: {x: 1209.7417, y: 423.1386}
+  m_AnchoredPosition: {x: 18.5591, y: -9.2336}
+  m_SizeDelta: {x: 1082.0996, y: 101.1755}
   m_Pivot: {x: 0.52835894, y: 0.5}
 --- !u!114 &1985966740
 MonoBehaviour:
@@ -488,8 +496,8 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 100
-    m_FontStyle: 0
+    m_FontSize: 70
+    m_FontStyle: 2
     m_BestFit: 0
     m_MinSize: 0
     m_MaxSize: 100
@@ -499,7 +507,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC8FD\uC5C8\uC5B4\uC694 \u314B \nSpace \uD0A4 \uB20C\uB7EC\uC11C \uC0B4\uC544\uB0A9\uC2DC\uB2E4."
+  m_Text: "space\uB97C \uB20C\uB7EC \uC0B4\uC544\uB098\uC138\uC694."
 --- !u!222 &1985966741
 CanvasRenderer:
   m_ObjectHideFlags: 0

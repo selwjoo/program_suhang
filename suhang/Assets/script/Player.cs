@@ -18,10 +18,11 @@ public class Player : MonoBehaviour
 
     public float timer = 0.5f;
     private bool istime = true;
-    private bool isGrounded = true;
+    public bool isGrounded = true;
 
     public SpriteRenderer ren;
     public GameObject player;
+    public GameObject duck;
     public Animator animator;
 
 
@@ -44,7 +45,7 @@ public class Player : MonoBehaviour
 
         if (isG1 == true)
         {
-            Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, 180));
+            Quaternion targetRotation = Quaternion.Euler(new Vector3(0, 0, -180));
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5);
         }
         else
@@ -65,7 +66,15 @@ public class Player : MonoBehaviour
 
         if (x > 0)
         {
-            ren.flipX = false;
+            if(isG1 == true)
+            {
+                ren.flipX = true;
+            }
+            else
+            {
+                ren.flipX = false;
+            }
+            
 
             if(isGrounded == true)
             {
@@ -75,7 +84,14 @@ public class Player : MonoBehaviour
         }
         else if (x < 0)
         {
-            ren.flipX = true;
+            if (isG1 == true)
+            {
+                ren.flipX = false;
+            }
+            else
+            {
+                ren.flipX = true;
+            }
 
             if (isGrounded == true)
             {
@@ -119,7 +135,7 @@ public class Player : MonoBehaviour
             }
             else if (isG1 == true)
             {
-               
+
                 rb.gravityScale = -0.2f;
             }
 
@@ -127,11 +143,12 @@ public class Player : MonoBehaviour
         }
         else if (isG1 == false)
         {
+  
             rb.gravityScale = 2f;
         }
         else if (isG1 == true)
         {
-           
+       
             rb.gravityScale = -2f;
         }
 
@@ -161,6 +178,7 @@ public class Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Die"))
         {
             Destroy(player);
+            Destroy(duck);
             SceneManager.LoadScene("Die");
         }
         if (collision.gameObject.CompareTag("bdbd"))
@@ -177,27 +195,27 @@ public class Player : MonoBehaviour
             }
             else if(GameManager.Scn == 1)
             {
-                SceneManager.LoadScene("1");
+                SceneManager.LoadScene("2");
             }
             else if(GameManager.Scn == 2)
             {
-                SceneManager.LoadScene("2");
+                SceneManager.LoadScene("3");
             }
             else if (GameManager.Scn == 3)
             {
-                SceneManager.LoadScene("3");
+                SceneManager.LoadScene("4");
             }
             else if (GameManager.Scn == 4)
             {
-                SceneManager.LoadScene("4");
+                SceneManager.LoadScene("5");
             }
             else if (GameManager.Scn == 5)
             {
-                SceneManager.LoadScene("5");
+                SceneManager.LoadScene("6");
             }
             else if (GameManager.Scn == 6)
             {
-                SceneManager.LoadScene("6");
+                SceneManager.LoadScene("1");
             }
             GameManager.Scn += 1;
 
