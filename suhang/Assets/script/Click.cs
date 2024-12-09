@@ -6,14 +6,19 @@ using UnityEngine.SceneManagement;
 
 public class Click : MonoBehaviour
 {
+
     public void Cl()
     {
         SceneManager.LoadScene("Story");
+        
     }
 
     public void F()
     {
+        GameManager.Stc = 0;
+        GameManager.Scn = 0;
         SceneManager.LoadScene("Main");
+     
     }
 
     public void H()
@@ -21,6 +26,7 @@ public class Click : MonoBehaviour
         SceneManager.LoadScene("How");
     }
 
+   
   
 
   

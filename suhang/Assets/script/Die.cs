@@ -19,7 +19,6 @@ public class Die : MonoBehaviour
         {
             Destroy(player);
             Destroy(duck);
-            Debug.Log("ав╬З╢ы.");
             SceneManager.LoadScene("Die");
         }
     }

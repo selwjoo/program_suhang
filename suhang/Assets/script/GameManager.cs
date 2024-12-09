@@ -6,8 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
-    public static int Scn;
-    public static int Stc;
+   public static int Scn;
+   public static int Stc;
 
     void Awake()
     {
@@ -30,7 +30,9 @@ public class GameManager : MonoBehaviour
         }
     }
 
-   
-        
-  
+    
+
+
+
+
 }

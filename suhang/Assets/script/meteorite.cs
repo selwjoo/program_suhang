@@ -40,5 +40,16 @@ public class meteorite : MonoBehaviour
             SceneManager.LoadScene("Tutorial 1");
         }
 
+        if (count == 16 && GameManager.Stc == 2)
+        {
+            GameManager.Stc += 1;
+            SceneManager.LoadScene("Ending2");
+        }
+
+        if (count == 6 && GameManager.Stc == 3)
+        {
+            SceneManager.LoadScene("Ending3");
+        }
+
     }
 }

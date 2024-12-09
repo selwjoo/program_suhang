@@ -54,6 +54,12 @@ public class Player : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * 5);
         }
 
+        b();
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
 
     }
 
@@ -249,5 +255,49 @@ public class Player : MonoBehaviour
         }
     }
 
+    public void b()
+    {
+        if (Input.GetKey(KeyCode.Keypad1) && GameManager.Stc == 1)
+        {
+            GameManager.Stc = 1;
+            GameManager.Scn = 1;
+            SceneManager.LoadScene("Story 1");
+        }
+        else if (Input.GetKey(KeyCode.Keypad2) && GameManager.Stc == 2)
+        {
+            GameManager.Scn = 2;
+            SceneManager.LoadScene("2");
+        }
+        else if (Input.GetKey(KeyCode.Keypad3) && GameManager.Stc == 2)
+        {
+            GameManager.Scn = 3;
+            SceneManager.LoadScene("3");
+        }
+        else if (Input.GetKey(KeyCode.Keypad4) && GameManager.Stc == 2)
+        {
+            GameManager.Scn = 4;
+            SceneManager.LoadScene("4");
+        }
+        else if (Input.GetKey(KeyCode.Keypad5) && GameManager.Stc == 2)
+        {
+            GameManager.Scn = 5;
+            SceneManager.LoadScene("5");
+        }
+        else if (Input.GetKey(KeyCode.Keypad6) && GameManager.Stc == 2)
+        {
+            GameManager.Scn = 6;
+            SceneManager.LoadScene("6");
+        }
+        else if (Input.GetKey(KeyCode.Keypad7) && GameManager.Stc == 2)
+        {
+            GameManager.Scn = 7;
+            SceneManager.LoadScene("1");
+        }
+        else if (Input.GetKey(KeyCode.Keypad8) && GameManager.Stc == 2)
+        {
+            SceneManager.LoadScene("Ending");
+        }
+
+    }
 
 }

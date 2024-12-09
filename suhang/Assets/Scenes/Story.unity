@@ -199,7 +199,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -42.84, y: -146}
+  m_AnchoredPosition: {x: -10, y: -135}
   m_SizeDelta: {x: 490.24, y: 55.98}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &304892887
@@ -334,7 +334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -526,30 +526,30 @@ MonoBehaviour:
   - dialogue: "\uD750\uC5B4\uC5C9\u3139 \u3147 \uC5C4\uB9C8 \uBBF8\uC548\uD574"
     pic: {fileID: -2076005527, guid: 79e3e3b7a323c164d9589953baa35e0b, type: 3}
   - dialogue: "\uC120\uD0DD\uBC1B\uC740 \uC790\uC5EC,,"
-    pic: {fileID: 0}
+    pic: {fileID: 21300000, guid: 736e314802f7aad4384b64e5b3cbd0b1, type: 3}
   - dialogue: "\uBCD1\uC544\uB9AC,,? \uC544\uB2C8 \uC624\uB9B0\uAC00\n\uC5B4\uB5BB\uAC8C
       \uB9D0\uC744 \uD558\uB294\uAC70\uC9C0 \uB0B4\uAC00 \uB4DC\uB514\uC5B4 \uBBF8\uCE5C\uAC74\uAC00"
     pic: {fileID: -284582690, guid: 79e3e3b7a323c164d9589953baa35e0b, type: 3}
   - dialogue: "\uC120\uD0DD\uBC1B\uC740\uC790\uC5EC \uC774 \uC6B4\uC11D\uC740 \n\uC791\uC740
       \uD30C\uD3B8\uC5D0 \uBD88\uACFC\uD558\uB2E4"
-    pic: {fileID: 21300000, guid: d7c4d36cb4428e540afe96e4e9d4b031, type: 3}
+    pic: {fileID: 21300000, guid: 736e314802f7aad4384b64e5b3cbd0b1, type: 3}
   - dialogue: "\uB108 \uB9CC\uC774 \uC774 \uC9C0\uAD6C\uB97C \uC9C0\uD0AC \uC218
       \uC788\uB2E4."
-    pic: {fileID: 21300000, guid: d7c4d36cb4428e540afe96e4e9d4b031, type: 3}
+    pic: {fileID: 21300000, guid: 736e314802f7aad4384b64e5b3cbd0b1, type: 3}
   - dialogue: "\uC544\uB2C8,, ,\uB108 \uBB54\uB370,, \uB0B4\uAC00 \uC9C0\uAD6C\uB97C
       \uC9C0\uCF1C?\n\uBB34\uC2A8 \uB9D0\uB3C4 \uC548\uB418\uB294 \uC18C\uB9AC\uB97C,,,,,,,,,,"
     pic: {fileID: -284582690, guid: 79e3e3b7a323c164d9589953baa35e0b, type: 3}
   - dialogue: "\uB108\uAC00 \uC6B4\uC11D\uC774 \uCDA9\uB3CC\uD588\uC73C\uBA74 \uC88B\uACA0\uB2E4\uB294\n\uC18C\uC6D0\uC744
       \uBE4C\uC5C8\uC796\uB2C8"
-    pic: {fileID: 0}
+    pic: {fileID: 21300000, guid: 736e314802f7aad4384b64e5b3cbd0b1, type: 3}
   - dialogue: "\uC77C\uB2E8 \uC2DC\uAC04\uC774 \uC5C6\uC73C\uB2C8,, \uB108\uC5D0\uAC8C
       \n\uB0B4 \uB2A5\uB825\uC744 \uBE4C\uB824\uC8FC\uC5C8\uB2E8\uB2E4"
-    pic: {fileID: 0}
+    pic: {fileID: 21300000, guid: 736e314802f7aad4384b64e5b3cbd0b1, type: 3}
   - dialogue: "\uC911\uB825\uC744 \uB2E4\uC2A4\uB9B4 \uC218 \uC788\uB294 \uB2A5\uB825\uC774\uC9C0 "
-    pic: {fileID: 0}
+    pic: {fileID: 21300000, guid: 736e314802f7aad4384b64e5b3cbd0b1, type: 3}
   - dialogue: "\uB2E4\uB9AC \uAC74\uB108 \uC5F0\uAD6C\uC2E4\uB85C \uAC00\uC11C \n\uC9C0\uAD6C\uB97C
       \uC9C0\uCF1C\uB2E4\uC624"
-    pic: {fileID: 0}
+    pic: {fileID: 21300000, guid: 736e314802f7aad4384b64e5b3cbd0b1, type: 3}
   TD: {fileID: 183679184}
   Pics: {fileID: 1829623883}
 --- !u!114 &1213042574
@@ -581,7 +581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -669,8 +669,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0099487, y: 0.00048828}
-  m_SizeDelta: {x: 901.98, y: 412.4}
+  m_AnchoredPosition: {x: 0.0015068, y: 0.00094318}
+  m_SizeDelta: {x: 800, y: 366.88}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1269999595
 MonoBehaviour:
@@ -809,6 +809,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bgm: {fileID: 1668592330}
+  MainBGM: {fileID: 0}
+  M3BGM: {fileID: 0}
+  storyBGM: {fileID: 0}
+  tutorialBGM: {fileID: 0}
+  endingBGM: {fileID: 0}
 --- !u!82 &1668592330
 AudioSource:
   m_ObjectHideFlags: 0
